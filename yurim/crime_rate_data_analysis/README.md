@@ -24,5 +24,4 @@
 
 2. 범죄율 시각화(plot)
 
-![범죄율 시각화](https://user-images.githubusercontent.com/33304898/82736505-397d6b80-9d65-11ea-9662-6f6220218295.JPG)
 <img src="https://user-images.githubusercontent.com/33304898/82736505-397d6b80-9d65-11ea-9662-6f6220218295.JPG"  width="600" height="370">
