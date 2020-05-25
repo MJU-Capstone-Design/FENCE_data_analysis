@@ -128,4 +128,6 @@
    * 생활안전지도에서 제공하는 치안안전등급 정보는 다음과 같다.
    
    <img src="https://user-images.githubusercontent.com/33304898/82802455-e537d000-9eb9-11ea-8c7e-faa855157aee.png" width = 600, height = 300>
+       
+       
        - 생활안전지도에서 api형태가 아닌 png로 데이터를 제공해주기 때문에 직접 수집해야하는 어려움이 있었다.
