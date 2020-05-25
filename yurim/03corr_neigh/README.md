@@ -117,4 +117,4 @@ def correlation(green_num, rate):
  
  <img src = "https://user-images.githubusercontent.com/33304898/82792843-fa593280-9eaa-11ea-8647-355705615174.png" width="600" height="300">
 
-* 전반적으로 양의 상관관계를 
+* 전반적으로 양의 상관관계를 갖는다
