@@ -291,7 +291,7 @@
    
 * 보안등 수 데이터와 치안등급 데이터 합치기(merge)
 
-* 각 구역별 cctv 수와 치안등급 간의 상관분석 진행(corr 함수 사용)
+* 각 구역별  수와 치안등급 간의 상관분석 진행(corr 함수 사용)
 
 
 ### ✏️분석결과
@@ -350,7 +350,7 @@
    
 * 경비인원 수 데이터와 치안등급 데이터 합치기(merge)
 
-* 각 구역별 cctv 수와 치안등급 간의 상관분석 진행(corr 함수 사용)
+* 각 구역별  수와 치안등급 간의 상관분석 진행(corr 함수 사용)
 
 ### ✏️분석결과
 
@@ -364,15 +364,21 @@
  * 특히 폭력에서 음의 상관관계가 나타난다.
  
  
- <img scr="https://user-images.githubusercontent.com/33304898/82825967-301c0c80-9ee7-11ea-9e52-eb352f8962aa.png">
- 
- 
+![image](https://user-images.githubusercontent.com/33304898/82825967-301c0c80-9ee7-11ea-9e52-eb352f8962aa.png)
+
+
  * 상관관계를 히트맵으로 시각화
  
  
  **2. 범죄율 하위 6개구**
  
- > 채워넣기
+<img src="https://user-images.githubusercontent.com/33304898/82826211-a882cd80-9ee7-11ea-8106-9855058cd53e.png" width=700 height=350>
+ 
+ * 전체적으로 양의 상관관계를 가지고 있다/
+ 
+![image](https://user-images.githubusercontent.com/33304898/82826305-d700a880-9ee7-11ea-8be3-04783d4920b3.png)
+
+ * 상관관계를 히트맵으로 시각화
 
 [데이터 전처리 및 분석 코드 바로가기](https://github.com/MJU-Capstone-Design/FENCE_data_analysis/tree/master/suhae)
 
@@ -389,46 +395,41 @@
 
 #### 📋데이터 수집
 
-**1. 서울시 내 아파트 데이터
+**1. 서울시 내 파출소, 지구대, 치안센터, 경찰서 데이터
 
 * 출처 : 공공데이터포털
-    - [데이터링크](https://www.data.go.kr/dataset/3075501/fileData.do) 
+    - [데이터링크](https://www.data.go.kr/dataset/3075501/fileData.do)
 
 
 #### 📋데이터 전처리
 
-* 결측치 제거
 
-* `경비인원` 칼럼의 값이 비어있는 경우, (아파트 동 수) * 2로 계산하여 데이터 보완
 
-* 필요한 칼럼만 추출하여 저장 ([아파트명, 주소(시도), 주소(시군구), 주소(읍면동), 경비인원, 좌표 X, 좌표Y, 법정동주소, 단지분류, 도로명주소])
 
 ### 상관관계 분석📊
 
 
 * 범죄율 상위 8개구와 하위 6개 구에 대해서 분석 진행
 
-* 각 파출소 및 지구대의 관할구역 데이터를 활용하여 각 구역 별 경비인원 수를 count
+* 각 파출소 및 지구대의 관할구역 데이터를 활용하여 각 구역 별 파출소 수를 count
 
    - 파출소 및 지구대 관할구역 데이터 => [데이터](https://github.com/MJU-Capstone-Design/FENCE_data_analysis/tree/master/yurim/02secure_data)
    
-   - dictionary 형태로 만들어 관할구역의 경비인원 수를 나타냄
+   - dictionary 형태로 만들어 관할구역의 파출소 수를 나타냄
    
 * 경비인원 수 데이터와 치안등급 데이터 합치기(merge)
 
-* 각 구역별 cctv 수와 치안등급 간의 상관분석 진행(corr 함수 사용)
+* 각 구역별  파출소 수와 치안등급 간의 상관분석 진행(corr 함수 사용)
 
 ### ✏️분석결과
 
+![image](https://user-images.githubusercontent.com/33304898/82826660-8473bc00-9ee8-11ea-9bf5-8c9ae8c0172a.png)
 
-**1. 범죄율 상위 8개 구**
+* 치안센터의 수와 치안 등급과의 관계는 대부분 상관관계가 미미했으나 살인과 폭력에서는 0.5이상으로 확실한 양의 상관관계를 보였다.
 
+* 분석의 의도는 치안 등급과 치안센터의 수의 관계가 음의 상관관계로 치안센터 개수가 많으면 등급이 낮아질 것으로 예상했으나 그와 다르게 상관관계가 거의 없거나 양의 상관관계가 보였다
 
- 
- 
- **2. 범죄율 하위 6개구**
- 
- > 채워넣기
+* 상관 관계 분석으로는 인과 관계를 알 수는 없으므로 이 결과가 살인, 폭력이 많이 일어나서 치안센터가 많이 생기게 된 것인지 치안센터가 많아서 살인, 폭력사건이 많이 생긴 것인지 알 수 없다.
 
 [데이터 전처리 및 분석 코드 바로가기](https://github.com/MJU-Capstone-Design/FENCE_data_analysis/tree/master/suhae)
 
