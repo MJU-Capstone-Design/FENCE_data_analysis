@@ -102,7 +102,7 @@ def correlation(green_num, rate):
 ## 분석결과
 
 
-** 1. 범죄율 상위 8개 구**
+**1. 범죄율 상위 8개 구**
 
 
 
@@ -111,3 +111,10 @@ def correlation(green_num, rate):
  * 절도, 폭력에서 약한 음의 상관관계를 보임
  
  * 하지만... 너무 약해서 문제
+ 
+ 
+ **2. 범죄율 하위 6개구**
+ 
+ <img src = "https://user-images.githubusercontent.com/33304898/82792843-fa593280-9eaa-11ea-8647-355705615174.png" width="600" height="300">
+
+* 전반적으로 양의 상관관계를 
