@@ -172,6 +172,72 @@
 
 * 지구대 및 파출소의 관할구역을 기준으로 구역을 나누어 범죄예방에 관련이 있다고 생각하는 요인들과 치안등급 간의 상관관계 분석
 
+-------------------------------------------
+
+## 분석2-1. cctv와 치안안전등급 간의 상관관계 분석
+
+👤contributor
+
+* [최리안](https://github.com/leeeeean)
+
+### 📋데이터
+
+#### 📋데이터 수집
+
+**1. 서울시 내 cctv 데이터
+
+* 출처 : 공공데이터포털 
+    - [데이터링크](https://www.data.go.kr/data/15013094/standard.do) 
+    - 서대문구 제외 24개구의 cctv 데이터를 받아옴
+    - 서대문구의 경우, 직접 데이터 요청을 통해 수집 완료
+
+#### 📋데이터 전처리
+
+* 공공데이터포털에서는 각 구별 cctv데이터 파일을 제공해주고 있어, 수집한 25개구의 데이터를 하나로 합침
+
+* 결측치 제거
+
+* 위도/경도 데이터 ➡️ 도로명주소 / 지번주소 데이터
+
+* 도로명주소 / 지번주소 데이터 ➡️ 위도/경도 데이터
+
+* 필요한 칼럼만 추출하여 저장 ([관리기관명, 카메라대수, 도로명주소, 지번주소, 위도, 경도])
+
+### 상관관계 분석📊
+
+
+* 범죄율 상위 8개구와 하위 6개 구에 대해서 분석 진행
+
+* 각 파출소 및 지구대의 관할구역 데이터를 활용하여 각 구역 별 cctv의 수를 count
+
+   - 파출소 및 지구대 관할구역 데이터 => [데이터](https://github.com/MJU-Capstone-Design/FENCE_data_analysis/tree/master/yurim/02secure_data)
+   
+   - dictionary 형태로 만들어 관할구역의 cctv 수를 나타냄
+   
+* cctv 개수 데이터와 치안등급 데이터 합치기(merge)
+
+* 각 구역별 근린시설 수와 치안등급 간의 상관분석 진행(corr 함수 사용)
+
+### ✏️분석결과
+
+
+**1. 범죄율 상위 8개 구**
+
+
+<img src = "https://user-images.githubusercontent.com/33304898/82792326-30e27d80-9eaa-11ea-84f6-d29c4bfeb5a9.png" width="600" height="300">
+
+ * 절도, 폭력에서 약한 음의 상관관계를 보임
+ 
+ * 하지만... 너무 약해서 문제
+ 
+ 
+ **2. 범죄율 하위 6개구**
+ 
+ <img src = "https://user-images.githubusercontent.com/33304898/82792843-fa593280-9eaa-11ea-8647-355705615174.png" width="600" height="300">
+
+* 전반적으로 양의 상관관계를 갖는다
+
+[데이터 전처리 및 분석 코드 바로가기1](https://github.com/MJU-Capstone-Design/FENCE_data_analysis/tree/master/leean/01cctv_analysis)
 
 -------------------------------------------
 
@@ -222,10 +288,10 @@
 **2. 일반음식점**
 
 * 출처 : 서울열린데이터광장
-    - [데이터링크](https://data.seoul.go.kr/dataList/OA-2347/S/1/datasetView.do)
-* 위의 링크는 서대문구 휴게음식점 관련 데이터
+    - [데이터링크](https://data.seoul.go.kr/dataList/OA-10510/S/1/datasetView.do)
+* 위의 링크는 은평구 일반음식점 관련 데이터
 
-* 이와 같이 각 구별 휴게음식점 데이터를 제공해주고 있어, 25개 구의 휴게음식점에 해당하는 데이터를 다운받아 전처리 진행
+* 이와 같이 각 구별 일반음식점 데이터를 제공해주고 있어, 25개 구의 일반음식점에 해당하는 데이터를 다운받아 전처리 진행
 
 * 위도 / 경도 데이터가 없어 추가해야함
 
@@ -238,6 +304,15 @@
 
 * 주소 / 위도 / 경도 데이터 포함
 
+**4. 공원**
+
+* 출처 : 서울열린데이터광장
+   - [데이터링크](https://data.seoul.go.kr/dataList/OA-394/S/1/datasetView.do)
+   
+   * 서울시 전체 공원 데이터 제공
+   
+   * 주소/위도/경도 데이터 포함
+   
 
 
 #### 📋데이터 전처리
@@ -262,7 +337,7 @@
 
 **3. 공원**
 
-* 
+* 필요한 열만 추출하여 
 
 ### 상관관계 분석📊
 
@@ -311,3 +386,6 @@ def correlation(green_num, rate):
  <img src = "https://user-images.githubusercontent.com/33304898/82792843-fa593280-9eaa-11ea-8647-355705615174.png" width="600" height="300">
 
 * 전반적으로 양의 상관관계를 갖는다
+
+[데이터 전처리 및 분석 코드 바로가기1](https://github.com/MJU-Capstone-Design/FENCE_data_analysis/tree/master/yurim/03corr_neigh)
+[데이터 전처리 및 분석 코드 바로가기1](https://github.com/MJU-Capstone-Design/FENCE_data_analysis/tree/master/heeju)
